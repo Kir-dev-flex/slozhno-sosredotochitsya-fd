@@ -23,7 +23,7 @@
   padding-inline: var(--global-padding);
   padding-block-start: 75px;
   padding-block-end: 66px;
-  min-block-size: 100vh;
+  block-size: 100vh;
 }
 
 .decorative-angles {
@@ -218,7 +218,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr max-content 1fr;
   background-color: var(--bg-color);
-  min-block-size: 100vh;
+  block-size: 100vh;
 }
 
 .footer__title {

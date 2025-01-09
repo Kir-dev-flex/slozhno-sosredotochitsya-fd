@@ -23,11 +23,15 @@
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
   background-color: var(--bg-color);
-  background-image: var(--bg-image-light);
+  background-image: var(--bg-image);
 }
 
 .theme-light .content, .theme-light .gallery, .theme-light .footer {
   background-color: transparent;
+}
+
+.theme-light .decorative-angles::before, .theme-light .decorative-angles::after {
+  border-color: var(--text-color);
 }
 
 .theme-light .content__text {
@@ -48,10 +52,6 @@
 
 .theme-light .content__title {
   color: var(--text-color);
-}
-
-.theme-light .header__decorative-element {
-  display: none;
 }
 
 .theme-light .content__subtitle {
