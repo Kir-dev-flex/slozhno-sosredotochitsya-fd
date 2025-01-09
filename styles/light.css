@@ -10,33 +10,19 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --accent-color: #FF8DCB;
+  --bg-color: #FFF1F7;
   --accent-color-transparent: #35343066;
   --secondary-color: #FFC2E6;
   --text-color: #353430;
   --black-color: #000028;
-  --bg-image-dark: url("../images/cover-image-dark.png");
-  --bg-image-light: url("../images/cover-image-light.png");
+  --bg-image: url("../images/cover-image-light.png");
   --transition: .2s ease-in;
   --global-padding: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-  --accent-color: #FF8DCB;
-  --accent-color-transparent: #35343066;
-  --secondary-color: #FFC2E6;
-  --text-color: #353430;
-  --black-color: #000028;
-  --bg-image-dark: url("../images/cover-image-dark.png");
-  --bg-image-light: url("../images/cover-image-light.png");
-  --transition: .2s ease-in;
-  --global-padding: 10px;    
-  }
-}
-
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
-  background-color: var(--accent-color);
+  background-color: var(--bg-color);
   background-image: var(--bg-image-light);
 }
 
@@ -60,6 +46,29 @@
   display: none;
 }
 
-.content__title {
+.theme-light .content__title {
   color: var(--text-color);
+}
+
+.theme-light .header__decorative-element {
+  display: none;
+}
+
+.theme-light .content__subtitle {
+  color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --accent-color: #FF8DCB;
+  --accent-color-transparent: #35343066;
+  --secondary-color: #FFC2E6;
+  --text-color: #353430;
+  --bg-color: #000028;
+  --bg-image: url("../images/cover-image-light.png");
+  --bg-color: #FFF1F7;
+  --transition: .2s ease-in;
+  --global-padding: 10px;
+  --header-decor-visibility: none;
+}
 }

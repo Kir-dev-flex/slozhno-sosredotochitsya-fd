@@ -6,8 +6,8 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: "IBM Plex mono", sans-serif;
   font-size: 18px;
-  background-color: var(--black-color);
-  background-image: var(--bg-image-dark);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -39,6 +39,7 @@
   border-block-start: 1px solid var(--accent-color);
   inline-size: 25px;
   block-size: 25px;
+  display: var(--header-decor-visibility);
 }
 .decorative-angles::after {
   content: "";
@@ -59,6 +60,7 @@
   font-size: 18px;
   line-height: 25px;
   text-transform: uppercase;
+  display: var(--header-decor-visibility) ;
 }
 
 .header__decorative-element::after {
@@ -79,7 +81,7 @@
 .header__theme-menu-button {
   border: 1px solid transparent;
   padding-inline: 12px;
-  color: var(--accent-color);
+  color: var(--text-color);
   font-size: 18px;
   background-color: transparent;
   transition: border-color var(--transition);
@@ -103,7 +105,7 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--text-color);
   pointer-events: none;
 }
 
@@ -117,7 +119,7 @@
 }
 
 .title-decor {
-  color: var(--black-color);
+  color: var(--text-color);
   font-weight: 700;
   font-size: 18px;
   background-color: var(--accent-color);
@@ -129,18 +131,19 @@
 
 .content {
   padding: 40px var(--global-padding) 0;
-  background-color: var(--black-color);
+  background-color: var(--bg-color);
 }
 
 .content__title {
   margin-block-end: 20px;
-  color: var(--accent-color);
+  color: var(--text-color);
   font-weight: 700;
   font-size: 18px;
 }
 
 .content__subtitle {
   margin-block-end: 10px;
+  color: var(--text-color);
 }
 
 .content__link {
@@ -194,10 +197,11 @@
 
 .gallery {
   padding: 0 var(--global-padding) 36px;
-  background-color: var(--black-color);
+  background-color: var(--bg-color);
 }
 
 .gallery__title {
+  color: var(--text-color);
   margin-block-end: 10px;
 }
 
@@ -213,7 +217,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr max-content 1fr;
-  background-color: var(--black-color);
+  background-color: var(--bg-color);
   min-block-size: 100vh;
 }
 
@@ -274,6 +278,7 @@
     margin-block-end: 6px;
   }
   .header__description {
+    color: var(--text-color);
     grid-column: 2/3;
     margin-block-start: 15px;
   }
