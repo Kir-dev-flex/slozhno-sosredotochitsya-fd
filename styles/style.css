@@ -280,7 +280,7 @@
   .header__description {
     color: var(--text-color);
     grid-column: 2/3;
-    margin-block-start: 15px;
+    margin-block-start: 13px;
   }
   .why {
     display: grid;
@@ -363,7 +363,7 @@
     right: 28px;
   }
   .header__title {
-    margin-block-start: 83px;
+    margin-block-start: 103px;
     margin-block-end: 0;
   }
   .header__description {
@@ -384,7 +384,7 @@
     margin-block-start: 19px;
   }
   .content {
-    padding-block-start: 36px;
+    padding-block-start: 59px;
   }
   .gallery {
     row-gap: 16px;

@@ -17,8 +17,7 @@
   --black-color: #000028;
   --bg-image: url("../images/cover-image-light.png");
   --transition: .2s ease-in;
-  --global-padding: 10px;
-}
+  }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
