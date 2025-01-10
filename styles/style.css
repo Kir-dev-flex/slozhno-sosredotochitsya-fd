@@ -148,7 +148,7 @@
 
 .content__link {
   position: relative;
-  text-shadow: 2px 2px 0 var(--text-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 /* Пришлось псевдоэлементом, иначе подчеркиание дублировалось из-за тени. */
@@ -189,6 +189,10 @@
 .improve .content__subtitle {
   margin-block-start: 20px;
   font-weight: 400;
+}
+
+br {
+  display: none;
 }
 
 /* Content end */
@@ -347,6 +351,9 @@
 }
 
 @media (width >= 1024px) {
+  br {
+    display: none;
+  }
   .header {
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 22px;
@@ -382,6 +389,9 @@
   }
   .improve .content__subtitle {
     margin-block-start: 19px;
+  }
+  br {
+    display: block;
   }
   .content {
     padding-block-start: 59px;
