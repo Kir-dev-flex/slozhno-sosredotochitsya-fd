@@ -191,10 +191,6 @@
   font-weight: 400;
 }
 
-br {
-  display: none;
-}
-
 /* Content end */
 
 /* Gallery */
@@ -351,9 +347,6 @@ br {
 }
 
 @media (width >= 1024px) {
-  br {
-    display: none;
-  }
   .header {
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 22px;
@@ -389,9 +382,6 @@ br {
   }
   .improve .content__subtitle {
     margin-block-start: 19px;
-  }
-  br {
-    display: block;
   }
   .content {
     padding-block-start: 59px;
