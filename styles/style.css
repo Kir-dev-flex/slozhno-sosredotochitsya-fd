@@ -426,4 +426,7 @@
   .improve {
     margin-block-end: 18px;
   }
+  .improve .content__text {
+    margin-block-start: 10px;
+  }
 }
