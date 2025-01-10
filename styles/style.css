@@ -1,10 +1,8 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 @import url(variables.css);
 
 .page {
   position: relative;
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: "IBM Plex mono", sans-serif, monospace;
   font-size: 18px;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
@@ -20,10 +18,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr max-content min-content;
-  padding-inline: var(--global-padding);
-  padding-block-start: 75px;
+  padding-inline: 10px;
+  padding-block-start: 73px;
   padding-block-end: 66px;
   block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .decorative-angles {
@@ -35,19 +34,18 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--theme-difference-color);
+  border-block-start: 1px solid var(--theme-difference-color);
   inline-size: 25px;
   block-size: 25px;
-  display: var(--header-decor-visibility);
 }
 .decorative-angles::after {
   content: "";
   position: absolute;
   bottom: 10px;
   left: 10px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--theme-difference-color);
+  border-block-end: 1px solid var(--theme-difference-color);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -56,11 +54,11 @@
   position: absolute;
   top: 10px;
   right: 19px;
+  display: var(--decor-visibility);
   color: var(--accent-color);
   font-size: 18px;
   line-height: 25px;
   text-transform: uppercase;
-  display: var(--header-decor-visibility) ;
 }
 
 .header__decorative-element::after {
@@ -68,10 +66,11 @@
   display: inline-block;
   margin-left: 10px;
   border-radius: 50%;
-  box-shadow: 0 0 10px 4px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
   inline-size: 9px;
   block-size: 9px;
+  transform: translateY(-2px);
 }
 
 .header__theme-menu {
@@ -81,19 +80,20 @@
 .header__theme-menu-button {
   border: 1px solid transparent;
   padding-inline: 12px;
-  color: var(--text-color);
+  color: var(--theme-difference-color);
   font-size: 18px;
   background-color: transparent;
   transition: border-color var(--transition);
   will-change: border-color;
 }
 
-.header__theme-menu-button:hover {
-  border-color: var(--accent-color-transparent);
-}
 .header__theme-menu-button:focus-within {
-  border-block-end-color: var(--accent-color-transparent);
+  border-block-end-color: var(--theme-difference-color);
   outline: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--theme-difference-color-transparent);
 }
 
 .header__theme-menu-item {
@@ -105,12 +105,12 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--theme-difference-color);
   pointer-events: none;
 }
 
 .header__title {
-  margin-block-end: 55px;
+  margin-block-end: 53px;
   color: var(--secondary-color);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -119,7 +119,7 @@
 }
 
 .title-decor {
-  color: var(--text-color);
+  color: var(--bg-color);
   font-weight: 700;
   font-size: 18px;
   background-color: var(--accent-color);
@@ -130,25 +130,26 @@
 /* Content */
 
 .content {
-  padding: 40px var(--global-padding) 0;
-  background-color: var(--bg-color);
+  padding: 40px 10px 0;
 }
 
 .content__title {
   margin-block-end: 20px;
-  color: var(--text-color);
+  color: var(--theme-difference-color);
   font-weight: 700;
   font-size: 18px;
 }
 
 .content__subtitle {
   margin-block-end: 10px;
-  color: var(--text-color);
+  color: var(--bg-color);
+  line-height: 23.4px;
 }
 
 .content__link {
   position: relative;
   text-shadow: 2px 2px 0 var(--accent-color);
+  color: var(--text-color);
 }
 
 /* Пришлось псевдоэлементом, иначе подчеркиание дублировалось из-за тени. */
@@ -159,7 +160,7 @@
   left: 0;
   background-color: var(--text-color);
   transition: inline-size var(--transition);
-  block-size: 2px;
+  block-size: 1px;
   inline-size: 0;
   will-change: inline-size;
 }
@@ -169,7 +170,7 @@
 }
 
 .content__link:focus-within {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--text-color);
   text-decoration: none;
 }
 
@@ -178,21 +179,30 @@
 }
 
 .content__text {
+  margin-block-end: 20px;
+  color: var(--text-color);
   font-size: 18px;
   line-height: 23.4px;
 }
 
 .content section {
-  padding-block-end: 32px;
+  padding-block-end: 30px;
+}
+
+.improve .content__title {
+  margin-block-end: 22px;
+}
+.improve .content__text {
+  margin-block-end: 20px;
+}
+
+.improve .title-decor {
+  margin-block-end: 20px;
 }
 
 .improve .content__subtitle {
-  margin-block-start: 20px;
+  margin-block-end: 10px;
   font-weight: 400;
-}
-
-br {
-  display: none;
 }
 
 /* Content end */
@@ -200,13 +210,12 @@ br {
 /* Gallery */
 
 .gallery {
-  padding: 0 var(--global-padding) 36px;
-  background-color: var(--bg-color);
+  padding: 0 10px 36px;
 }
 
 .gallery__title {
-  color: var(--text-color);
   margin-block-end: 10px;
+  color: var(--bg-color);
 }
 
 .gallery__img:not(:last-of-type) {
@@ -221,8 +230,8 @@ br {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr max-content 1fr;
-  background-color: var(--bg-color);
   block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -238,9 +247,6 @@ br {
 /* Footer end */
 
 @media (width >= 768px) {
-  br {
-    display: block;
-  }
   :root {
     --global-padding: 20px;
   }
@@ -251,7 +257,7 @@ br {
   .header {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
-    column-gap: 17px;
+    column-gap: 20px;
     padding-inline: 0;
     padding-inline-end: 20px;
     padding-block-start: 191px;
@@ -271,9 +277,10 @@ br {
   }
   .content {
     padding-block-start: 60px;
+    padding-inline: 20px;
   }
   .content section {
-    padding-block-end: 61px;
+    padding-block-end: 60px;
   }
   .decorative-angles::after {
     bottom: 20px;
@@ -285,17 +292,17 @@ br {
     margin-block-end: 6px;
   }
   .header__description {
-    color: var(--text-color);
     grid-column: 2/3;
-    margin-block-start: 13px;
+    margin-block-start: 14px;
+  }
+  .content-section {
+    display: grid;
   }
   .why {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
+    column-gap: 21px;
   }
   .reasons {
-    display: grid;
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content 1fr;
   }
@@ -304,7 +311,6 @@ br {
     grid-row: 2/3;
   }
   .improve {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: min-content auto 1fr;
     column-gap: 20px;
@@ -325,11 +331,15 @@ br {
     row-gap: 18px;
     column-gap: 20px;
     padding-block-end: 60px;
+    padding-inline: 20px;
   }
   .gallery__img {
     object-fit: cover;
     block-size: 100%;
     inline-size: 100%;
+  }
+  .gallery__img:not(:last-of-type) {
+    margin-block-end: 2px;
   }
   .gallery__title {
     grid-column: 1/-1;
@@ -354,9 +364,6 @@ br {
 }
 
 @media (width >= 1024px) {
-  br {
-    display: none;
-  }
   .header {
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 22px;
@@ -373,36 +380,34 @@ br {
     right: 28px;
   }
   .header__title {
-    margin-block-start: 103px;
+    margin-block-start: 106px;
     margin-block-end: 0;
   }
   .header__description {
-    margin-block-start: 111px;
+    margin-block-start: 112px;
     block-size: min-content;
   }
   .header__theme-menu-list {
     display: flex;
     gap: 10px;
   }
-  .why {
-    column-gap: 12px;
-  }
-  .improve {
+  .content-section {
     column-gap: 12px;
   }
   .improve .content__subtitle {
     margin-block-start: 19px;
   }
   .content {
-    padding-block-start: 59px;
+    padding-block-start: 60px;
   }
   .gallery {
-    row-gap: 16px;
+    row-gap: 18px;
   }
   .content section {
-    padding-block-end: 61px;
+    padding-block-end: 41px;
   }
   .reasons {
+    padding-block-start: 19px;
     grid-template-columns: repeat(3, 1fr);
   }
   .reasons .content__list {
@@ -412,5 +417,14 @@ br {
   }
   .content__title {
     margin-block-end: 21px;
+  }
+  .improve .title-decor {
+    margin-block-end: 0;
+  }
+  .improve .content__subtitle {
+    margin-block-end: 10px;
+  }
+  .improve {
+    margin-block-end: 18px;
   }
 }

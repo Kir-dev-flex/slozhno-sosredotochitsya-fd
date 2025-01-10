@@ -4,12 +4,13 @@
 */
 :root {
   --accent-color: #ff0070;
+  --theme-difference-color: #ff0070;
+  --theme-difference-color-transparent: #ff007066;
   --accent-color-transparent: #ff006f66;
   --secondary-color: #DB00FF;
   --text-color: #F1B2CE;
   --bg-color: #000028;
   --bg-image: url("../images/cover-image-dark.png");
   --transition: .2s ease-in;
-  --global-padding: 10px;
-  --header-decor-visibility: block;
+  --decor-visibility: block;
 }
