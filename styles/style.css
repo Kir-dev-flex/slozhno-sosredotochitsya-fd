@@ -68,9 +68,9 @@
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
+  transform: translateY(-2px);
   inline-size: 9px;
   block-size: 9px;
-  transform: translateY(-2px);
 }
 
 .header__theme-menu {
@@ -148,8 +148,8 @@
 
 .content__link {
   position: relative;
-  text-shadow: 2px 2px 0 var(--accent-color);
   color: var(--text-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 /* Пришлось псевдоэлементом, иначе подчеркиание дублировалось из-за тени. */
@@ -192,6 +192,7 @@
 .improve .content__title {
   margin-block-end: 22px;
 }
+
 .improve .content__text {
   margin-block-end: 20px;
 }
@@ -276,8 +277,8 @@
     right: 20px;
   }
   .content {
-    padding-block-start: 60px;
     padding-inline: 20px;
+    padding-block-start: 60px;
   }
   .content section {
     padding-block-end: 60px;
@@ -330,8 +331,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 18px;
     column-gap: 20px;
-    padding-block-end: 60px;
     padding-inline: 20px;
+    padding-block-end: 60px;
   }
   .gallery__img {
     object-fit: cover;
@@ -396,6 +397,7 @@
   }
   .improve .content__subtitle {
     margin-block-start: 19px;
+    margin-block-end: 10px;
   }
   .content {
     padding-block-start: 60px;
@@ -407,8 +409,8 @@
     padding-block-end: 41px;
   }
   .reasons {
-    padding-block-start: 19px;
     grid-template-columns: repeat(3, 1fr);
+    padding-block-start: 19px;
   }
   .reasons .content__list {
     display: grid;
@@ -420,9 +422,6 @@
   }
   .improve .title-decor {
     margin-block-end: 0;
-  }
-  .improve .content__subtitle {
-    margin-block-end: 10px;
   }
   .improve {
     margin-block-end: 18px;
