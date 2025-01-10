@@ -9,6 +9,7 @@
   --accent-color-transparent: #ff006f66;
   --secondary-color: #DB00FF;
   --text-color: #F1B2CE;
+  --theme-difference-text-color: #000028;
   --bg-color: #000028;
   --bg-image: url("../images/cover-image-dark.png");
   --transition: .2s ease-in;

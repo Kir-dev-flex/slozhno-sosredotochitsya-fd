@@ -119,7 +119,7 @@
 }
 
 .title-decor {
-  color: var(--bg-color);
+  color: var(--theme-difference-text-color);
   font-weight: 700;
   font-size: 18px;
   background-color: var(--accent-color);
@@ -142,7 +142,7 @@
 
 .content__subtitle {
   margin-block-end: 10px;
-  color: var(--bg-color);
+  color: var(--theme-difference-text-color);
   line-height: 23.4px;
 }
 
@@ -216,7 +216,7 @@
 
 .gallery__title {
   margin-block-end: 10px;
-  color: var(--bg-color);
+  color: var(--theme-difference-text-color);
 }
 
 .gallery__img:not(:last-of-type) {
